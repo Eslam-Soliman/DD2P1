@@ -1,14 +1,6 @@
 import numpy as np
 import statsmodels.api as sm
 fn = input ("Please enter the filename: ")
-def reg_m(y, x):
-    ones = np.ones(len(x[0]))
-    X = sm.add_constant(np.column_stack((x[0], ones)))
-    for ele in x[1:]:
-        X = sm.add_constant(np.column_stack((ele, X)))
-    results = sm.OLS(y, X).fit()
-    return results
-
 f = open(fn, "r")
 
 X = [
