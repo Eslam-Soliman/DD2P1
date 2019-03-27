@@ -1,0 +1,50 @@
+*** SPICE deck for cell NOR3x2_sim{sch} from library NOR3x2
+*** Created on Mon Mar 11, 2019 22:29:24
+*** Last revised on Tue Mar 26, 2019 19:06:46
+*** Written on Tue Mar 26, 2019 19:07:32 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT NOR3x2__NOR3x2 FROM CELL NOR3x2{sch}
+.SUBCKT NOR3x2__NOR3x2 in1 in2 in3 out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in1 gnd gnd N L=0.2U W=0.6U
+Mnmos@1 out in2 gnd gnd N L=0.2U W=0.6U
+Mnmos@3 out in3 gnd gnd N L=0.2U W=0.6U
+Mpmos@0 net@11 in1 out vdd P L=0.2U W=2.9U
+Mpmos@1 net@12 in2 net@11 vdd P L=0.2U W=2.9U
+Mpmos@2 vdd in3 net@12 vdd P L=0.2U W=2.9U
+.ENDS NOR3x2__NOR3x2
+.step param factor LIST 1 2 4 8
+*** SUBCIRCUIT first__INV1x1 FROM CELL first:INV1x1{sch}
+.SUBCKT first__INV1x1 in out
+** GLOBAL gnd
+** GLOBAL vdd
+.param n_width = 0.3U
+Mnmos@0 out in gnd gnd N L=0.2U W= {factor*0.3U}
+Mpmos@0 vdd in out vdd P L=0.2U W= {factor*0.72U}
+.ENDS first__INV1x1
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: NOR3x2_sim{sch}
+X_3nor2@0 in1 in2 in3 out NOR3x2__NOR3x2
+Xinverter@2 out out2 first__INV1x1
+.step param t LIST 0p 100p 400p 800p
+
+* Spice Code nodes in cell cell 'NOR3x2_sim{sch}'
+Vdd vdd 0 DC 3.3
+Vin1 in1 0 DC 0
+Vin2 in2 0 DC 0
+Vin3 in3 0 pulse 0 3.3 5n {t/0.6 + 0.00000001f} {t/0.6 + 0.00000001f} 5n {10 + t/0.3}
+.tran 0 15n
+.measure tpdf
++ TRIG V(in3) VAL= 1.65 RISE = 1
++ TARG V(out) VAL=1.65 FALL = 1
+.measure tpdr
++ TRIG V(in3) VAL = 1.65 FALL = 1
++ TARG V(out) VAL = 1.65 RISE = 1
+.measure diff param = tpdr - tpdf
+.include C:\Users\Dell\Desktop\scmos18.txt
+.END
