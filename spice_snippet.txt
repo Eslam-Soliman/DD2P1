@@ -4,19 +4,18 @@
 ** GLOBAL gnd
 ** GLOBAL vdd
 Mnmos@0 out in gnd gnd N L=0.2U W= {factor*0.3U}
-Mpmos@0 vdd in out vdd P L=0.2U W= {factor*0.72U}
+Mpmos@0 vdd in out vdd P L=0.2U W= {factor*0.7U}
 .ENDS first__INV1x1
 Xinverter@2 F out2 first__INV1x1
 .step param t LIST 0p 100p 400p 800p
 Vdd vdd 0 DC 3.3
-Vin1 a 0 DC 3.3
-Vin2 b 0 pulse 0 3.3 5n {t/0.6 + 0.00000001f} {t/0.6 + 0.00000001f} 5n {10 + t/0.3}
+Vin1 a 0 pulse 0 3.3 5n {t/0.6 + 0.00000001f} {t/0.6 + 0.00000001f} 5n {10 + t/0.3}
 .tran 0 15n
 .measure tpdf
-+ TRIG V(b) VAL= 1.65 RISE = 1
++ TRIG V(a) VAL= 1.65 RISE = 1
 + TARG V(F) VAL=1.65 FALL = 1
 .measure tpdr
-+ TRIG V(b) VAL = 1.65 FALL = 1
++ TRIG V(a) VAL = 1.65 FALL = 1
 + TARG V(F) VAL = 1.65 RISE = 1
 .measure diff param = tpdr - tpdf
-.include C:\Users\Dell\Desktop\scmos18.txt
+.include C:\Electric\scmos18.txt
