@@ -6,6 +6,9 @@ Vicon|ic
 Vlayout|lay
 Vschematic|sch
 
+# Technologies:
+Tmocmos|ScaleFORmocmos()D100.0|mocmosAnalog()BT|mocmosNumberOfMetalLayers()I3
+
 # Cell NAND2x1;1{ic}
 CNAND2x1;1{ic}||artwork|1553434680356|1553434719818|E
 Ngeneric:Facet-Center|art@0||0|0||||AV
@@ -27,22 +30,22 @@ Eb||D5G2;|pin@4||U
 X
 
 # Cell NAND2x1;1{lay}
-CNAND2x1;1{lay}||mocmos|1553434730007|1553434984519||DRC_last_good_drc_area_date()G1553434985280|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1553434985280
+CNAND2x1;1{lay}||mocmos|1553434730007|1553763309106||DRC_last_good_drc_area_date()G1553763311905|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1553763311905
 Ngeneric:Facet-Center|art@0||0|0||||AV
-NMetal-1-N-Active-Con|contact@0||3.5|-36.5||3||
-NMetal-1-N-Active-Con|contact@1||-9.5|-36.5||3||
-NMetal-1-P-Active-Con|contact@2||-2.5|51||5||
-NMetal-1-P-Active-Con|contact@3||-10.5|51||5||
-NMetal-1-P-Active-Con|contact@4||5.5|51||5||
+NMetal-1-N-Active-Con|contact@0||3.5|-33||1||
+NMetal-1-N-Active-Con|contact@1||-9.5|-33||1||
+NMetal-1-P-Active-Con|contact@2||-2.5|33.5||2||
+NMetal-1-P-Active-Con|contact@3||-10.5|33.5||2||
+NMetal-1-P-Active-Con|contact@4||5.5|33.5||2||
 NMetal-1-Polysilicon-1-Con|contact@5||1|1||||
 NMetal-1-Polysilicon-1-Con|contact@6||-18.5|2.5||||
-NN-Transistor|nmos@0||-0.5|-36.5|5||R|
-NN-Transistor|nmos@1||-5.5|-36.5|5||R|
-NPolysilicon-1-Pin|pin@0||-6.5|-30.5||||
-NPolysilicon-1-Pin|pin@1||1.5|-30.5||||
+NN-Transistor|nmos@0||-0.5|-33|3||R|
+NN-Transistor|nmos@1||-5.5|-33|3||R|
+NPolysilicon-1-Pin|pin@0||-6.5|-28||||
+NPolysilicon-1-Pin|pin@1||1.5|-28||||
 NPolysilicon-1-Pin|pin@2||1.5|0.5||||
-NPolysilicon-1-Pin|pin@3||-17|44||||
-NPolysilicon-1-Pin|pin@4||-17|-30.5||||
+NPolysilicon-1-Pin|pin@3||-17|28||||
+NPolysilicon-1-Pin|pin@4||-17|-28||||
 NMetal-1-Pin|pin@5||-10.5|12.5||||
 NMetal-1-Pin|pin@6||13|12.5||||
 NMetal-1-Pin|pin@7||13|-10.5||||
@@ -51,38 +54,38 @@ NPolysilicon-1-Pin|pin@9||-17|2.5||||
 NMetal-1-Pin|pin@10||13|3||||
 NMetal-1-Pin|pin@11||5.5|12.5||||
 NMetal-1-Pin|pin@12||13|3||||
-NP-Transistor|pmos@0||1.5|51|7||R|
-NP-Transistor|pmos@1||-6.5|51|7||R|
-NMetal-1-P-Well-Con|substr@0||-3|-51|15|||
-NMetal-1-N-Well-Con|well@0||-3|67|15|||
-APolysilicon-1|net@0|||S0|pmos@1|poly-left|-6.5|44|pin@3||-17|44
-AMetal-1|net@1||1|S900|contact@1||-9.5|-34.5|substr@0||-9.5|-51
+NP-Transistor|pmos@0||1.5|33.5|4||R|
+NP-Transistor|pmos@1||-6.5|33.5|4||R|
+NMetal-1-P-Well-Con|substr@0||-3|-47.5|15|||
+NMetal-1-N-Well-Con|well@0||-3|47.5|15|||
+APolysilicon-1|net@0|||S0|pmos@1|poly-left|-6.5|28|pin@3||-17|28
+AMetal-1|net@1||1|S900|contact@1||-9.5|-32|substr@0||-9.5|-47.5
 AN-Active|net@2|||S1800|nmos@0|diff-top|-4.25|-34|nmos@1|diff-bottom|-1.75|-34
-AN-Active|net@3|||S1800|nmos@0|diff-bottom|3.25|-34.5|contact@0||3.5|-34.5
-APolysilicon-1|net@4|||S0|pin@0||-6.5|-30.5|pin@4||-17|-30.5
+AN-Active|net@3|||S1800|nmos@0|diff-bottom|3.25|-34|contact@0||3.5|-34
+APolysilicon-1|net@4|||S0|pin@0||-6.5|-28|pin@4||-17|-28
 AMetal-1|net@6||1|S0|pin@7||13|-10.5|pin@8||3.5|-10.5
-AMetal-1|net@7||1|S2700|contact@0||3.5|-34.5|pin@8||3.5|-10.5
-APolysilicon-1|net@8|||S900|pin@3||-17|44|pin@9||-17|2.5
-APolysilicon-1|net@9|||S900|pin@9||-17|2.5|pin@4||-17|-30.5
+AMetal-1|net@7||1|S2700|contact@0||3.5|-34|pin@8||3.5|-10.5
+APolysilicon-1|net@8|||S900|pin@3||-17|28|pin@9||-17|2.5
+APolysilicon-1|net@9|||S900|pin@9||-17|2.5|pin@4||-17|-28
 APolysilicon-1|net@10|||S0|pin@9||-17|2.5|contact@6||-18|2.5
-AP-Active|net@11|||S1800|pmos@0|diff-bottom|5.25|48|contact@4||5.5|48
+AP-Active|net@11|||S1800|pmos@0|diff-bottom|5.25|35|contact@4||5.5|35
 AMetal-1|net@12||1|S1800|pin@5||-10.5|12.5|pin@11||5.5|12.5
 AMetal-1|net@13||1|S1800|pin@11||5.5|12.5|pin@6||13|12.5
-APolysilicon-1|net@14|||S0|nmos@1|poly-right|-5.5|-30.5|pin@0||-6.5|-30.5
-AMetal-1|net@15||1|S900|contact@4||5.5|48|pin@11||5.5|12.5
+APolysilicon-1|net@14|||S0|nmos@1|poly-right|-5.5|-28|pin@0||-6.5|-28
+AMetal-1|net@15||1|S900|contact@4||5.5|32|pin@11||5.5|12.5
 AMetal-1|net@16||1|S900|pin@6||13|12.5|pin@12||13|3
 AMetal-1|net@17||1|S900|pin@12||13|3|pin@7||13|-10.5
 AMetal-1|net@18|||S1800|pin@10||13|3|pin@12||13|3
-AP-Active|net@19|||S1800|contact@2||-2.5|48|pmos@0|diff-top|-2.25|48
-AP-Active|net@20|||S1800|pmos@1|diff-bottom|-2.75|48|contact@2||-2.5|48
-AMetal-1|net@22||1|S2700|contact@2||-2.5|48|well@0||-2.5|67
-APolysilicon-1|net@23|||S1800|nmos@0|poly-right|-0.5|-30.5|pin@1||1.5|-30.5
-AN-Active|net@24|||S1800|contact@1||-9.5|-34.5|nmos@1|diff-top|-9.25|-34.5
-APolysilicon-1|net@25|||S900|pmos@0|poly-left|1.5|44|pin@2||1.5|0.5
-APolysilicon-1|net@26|||S900|pin@2||1.5|0.5|pin@1||1.5|-30.5
+AP-Active|net@19|||S1800|contact@2||-2.5|35|pmos@0|diff-top|-2.25|35
+AP-Active|net@20|||S1800|pmos@1|diff-bottom|-2.75|35|contact@2||-2.5|35
+AMetal-1|net@22||1|S2700|contact@2||-2.5|32|well@0||-2.5|48
+APolysilicon-1|net@23|||S1800|nmos@0|poly-right|-0.5|-28|pin@1||1.5|-28
+AN-Active|net@24|||S1800|contact@1||-9.5|-34|nmos@1|diff-top|-9.25|-34
+APolysilicon-1|net@25|||S900|pmos@0|poly-left|1.5|28|pin@2||1.5|0.5
+APolysilicon-1|net@26|||S900|pin@2||1.5|0.5|pin@1||1.5|-28
 APolysilicon-1|net@27|||S0|pin@2||1.5|0.5|contact@5||0.5|0.5
-AMetal-1|net@28||1|S900|contact@3||-10.5|51|pin@5||-10.5|12.5
-AP-Active|net@29|||S0|pmos@1|diff-top|-10.25|51.5|contact@3||-10.5|51.5
+AMetal-1|net@28||1|S900|contact@3||-10.5|32|pin@5||-10.5|12.5
+AP-Active|net@29|||S0|pmos@1|diff-top|-10.25|34|contact@3||-10.5|34
 EF||D5G2;|pin@12||U
 Ea||D5G2;|contact@6||U
 Eb||D5G2;|contact@5||U
@@ -91,15 +94,15 @@ Evdd||D5G2;|well@0||U
 X
 
 # Cell NAND2x1;1{sch}
-CNAND2x1;1{sch}||schematic|1553434627490|1553434680359|
+CNAND2x1;1{sch}||schematic|1553434627490|1553763355848|
 INAND2x1;1{ic}|NAND2x1@0||16.5|22.5|||D5G4;
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOff-Page|conn@0||-12|2.5||||
 NOff-Page|conn@1||-12.5|-4||||
 NOff-Page|conn@2||10|-2||||
 NGround|gnd@0||2|-17||||
-NTransistor|nmos@0||0|-4|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D8.0
-NTransistor|nmos@1||0|-10|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D8.0
+NTransistor|nmos@0||0|-4|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D6.0
+NTransistor|nmos@1||0|-10|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D6.0
 NWire_Pin|pin@0||4|-2||||
 NWire_Pin|pin@1||-4|-2||||
 NWire_Pin|pin@2||8|-2||||
@@ -112,8 +115,8 @@ NWire_Pin|pin@8||2|-15||||
 NWire_Pin|pin@9||-7|-10||||
 NWire_Pin|pin@10||-1|-4||||
 NWire_Pin|pin@11||-1.5|-4||||
-NTransistor|pmos@0||2|7|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D10.0
-NTransistor|pmos@1||-6|7|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D10.0
+NTransistor|pmos@0||2|7|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D7.0
+NTransistor|pmos@1||-6|7|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D7.0
 NPower|pwr@0||1|16||||
 Awire|net@0|||900|nmos@0|s|2|-6|nmos@1|d|2|-8
 Awire|net@1|||1800|nmos@0|d|2|-2|pin@0||4|-2
@@ -415,4 +418,11 @@ Awire|net@29|||2700|pin@13||-7.5|-0.5|pin@9||-7.5|10.5
 EF||D5G2;|conn@2|y|U
 Ea||D5G2;|conn@0|a|U
 Eb||D5G2;|conn@1|y|U
+X
+
+# Cell NAND_sim;1{sch}
+CNAND_sim;1{sch}||schematic|1553763389491|1553763677792|
+INAND2x1;1{ic}|NAND2x1@0||11|18|||D5G4;
+Ngeneric:Facet-Center|art@0||0|0||||AV
+Ngeneric:Invisible-Pin|pin@0||-15|9.5|||||SIM_spice_card(D5G1;)S[.step param factor LIST 1 2 4 8,Mnmos@0 out in gnd gnd N L=0.2U W= {factor*0.3U},Mpmos@0 vdd in out vdd P L=0.2U W= {factor*0.72U},.step param t LIST 0p 100p 400p 800p,Vdd vdd 0 DC 3.3,Vin1 a 0 DC 3.3,Vin3 b 0 pulse 0 3.3 5n {t/0.6 + 0.00000001f} {t/0.6 + 0.00000001f} 5n {10 + t/0.3},.tran 0 15n,.measure tpdf,+ TRIG V(b) VAL= 1.65 RISE = 1,+ TARG V(F) VAL=1.65 FALL = 1,.measure tpdr,+ TRIG V(b) VAL = 1.65 FALL = 1,+ TARG V(F) VAL = 1.65 RISE = 1,.measure diff param = tpdr - tpdf,".include C:\\Users\\Dell\\Desktop\\scmos18.txt"]
 X
