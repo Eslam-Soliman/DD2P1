@@ -1,0 +1,113 @@
+Circuit: *** SPICE deck for cell NAND2x2_sim{sch} from library NAND
+
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+.step factor=1 t=0
+.step factor=2 t=0
+.step factor=4 t=0
+.step factor=8 t=0
+.step factor=1 t=1e-010
+.step factor=2 t=1e-010
+.step factor=4 t=1e-010
+.step factor=8 t=1e-010
+.step factor=1 t=4e-010
+.step factor=2 t=4e-010
+.step factor=4 t=4e-010
+.step factor=8 t=4e-010
+.step factor=1 t=8e-010
+.step factor=2 t=8e-010
+.step factor=4 t=8e-010
+.step factor=8 t=8e-010
+
+
+Measurement: tpdf
+  step	tpdf	FROM	TO
+     1	9.07277e-012	5.00001e-009	5.00908e-009
+     2	1.45761e-011	5.00001e-009	5.01459e-009
+     3	2.45997e-011	5.00001e-009	5.02461e-009
+     4	4.40527e-011	5.00001e-009	5.04406e-009
+     5	2.23299e-011	5.08333e-009	5.10566e-009
+     6	2.88725e-011	5.08333e-009	5.11221e-009
+     7	4.06474e-011	5.08333e-009	5.12398e-009
+     8	5.89618e-011	5.08333e-009	5.1423e-009
+     9	1.50305e-011	5.33333e-009	5.34836e-009
+    10	2.69966e-011	5.33333e-009	5.36033e-009
+    11	4.67389e-011	5.33333e-009	5.38007e-009
+    12	7.83636e-011	5.33333e-009	5.4117e-009
+    13	-5.1126e-012	5.66667e-009	5.66155e-009
+    14	1.07005e-011	5.66667e-009	5.67737e-009
+    15	3.70105e-011	5.66667e-009	5.70368e-009
+    16	7.96687e-011	5.66667e-009	5.74634e-009
+
+Measurement: tpdr
+  step	tpdr	FROM	TO
+     1	2.13955e-011	1.00052e-008	1.00266e-008
+     2	2.60549e-011	1.00069e-008	1.00329e-008
+     3	3.27189e-011	1.00069e-008	1.00396e-008
+     4	5.00191e-011	1.00073e-008	1.00573e-008
+     5	4.03449e-011	1.025e-008	1.02903e-008
+     6	4.73607e-011	1.025e-008	1.02974e-008
+     7	5.82972e-011	1.025e-008	1.03083e-008
+     8	7.68495e-011	1.025e-008	1.03268e-008
+     9	8.83323e-011	1.1e-008	1.10883e-008
+    10	1.00925e-010	1.1e-008	1.11009e-008
+    11	1.21384e-010	1.1e-008	1.11214e-008
+    12	1.53405e-010	1.1e-008	1.11534e-008
+    13	1.39127e-010	1.2e-008	1.21391e-008
+    14	1.56493e-010	1.2e-008	1.21565e-008
+    15	1.84804e-010	1.2e-008	1.21848e-008
+    16	2.28879e-010	1.2e-008	1.22289e-008
+
+Measurement: diff
+  step	tpdr - tpdf
+     1	1.23227e-011
+     2	1.14787e-011
+     3	8.11918e-012
+     4	5.96639e-012
+     5	1.80151e-011
+     6	1.84882e-011
+     7	1.76498e-011
+     8	1.78877e-011
+     9	7.33018e-011
+    10	7.3928e-011
+    11	7.46449e-011
+    12	7.5041e-011
+    13	1.4424e-010
+    14	1.45793e-010
+    15	1.47794e-010
+    16	1.4921e-010
+
+
+Date: Thu Mar 28 15:33:57 2019
+Total elapsed time: 1.639 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2239
+traniter = 2226
+tranpoints = 1062
+accept = 1059
+rejected = 3
+matrix size = 9
+fillins = 0
+solver = Normal
+Matrix Compiler1: 368 bytes object code size  0.4/0.2/[0.1]
+Matrix Compiler2: 743 bytes object code size  0.3/0.3/[0.1]
+
+
