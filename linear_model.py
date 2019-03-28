@@ -2,6 +2,7 @@ import numpy as np
 import statsmodels.api as sm
 fn = input ("Please enter the filename: ")
 f = open(fn, "r")
+output = open("output.txt", "w")
 
 X = [
 [1, 0],
@@ -50,7 +51,39 @@ for i in range (16):
 from sklearn.linear_model import LinearRegression
 reg = LinearRegression()
 reg.fit(np.array(X), np.array(tpdf))
-print ("tpdf(ps) = ", reg.coef_[0], " x load(multiple of Cinv) + ", reg.coef_[1], " x slew (ps) + ", reg.intercept_)
+output.write ("tpdf(ps): \n")
+output.write ("slw\\ld\t")
+for i in [1, 2, 4, 8]:
+    output.write (str(i))
+    output.write("\t")
+output.write("\n")
+delays = [0, 100, 400, 800]
+for i in range(4):
+    output.write(str(delays[i]))
+    output.write("\t")
+    for j in range(4):
+        output.write(str(tpdf[4*i+j]))
+        output.write("\t")
+    output.write("\n")
+output.write("\n")
+print("tpdf(ps) = ", reg.coef_[0], " x load(multiple of Cinv) + ", reg.coef_[1], " x slew (ps) + ", reg.intercept_)
+
+output.write ("tpdr(ps): \n")
+output.write ("slw\\ld\t")
+for i in [1, 2, 4, 8]:
+    output.write (str(i))
+    output.write("\t")
+output.write("\n")
+delays = [0, 100, 400, 800]
+for i in range(4):
+    output.write(str(delays[i]))
+    output.write("\t")
+    for j in range(4):
+        output.write(str(tpdr[4*i+j]))
+        output.write("\t")
+    output.write("\n")
+output.write("\n")
 reg2 = LinearRegression()
 reg2.fit(np.array(X), np.array(tpdr))
 print ("tpdr(ps) = ", reg2.coef_[0], " x load(multiple of Cinv) + ", reg2.coef_[1], " x slew(ps) + ", reg2.intercept_)
+print ("Delay tables written to file output.txt")
