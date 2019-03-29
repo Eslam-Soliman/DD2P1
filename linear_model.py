@@ -46,10 +46,9 @@ for i in range (16):
         tpdr.append(float(f.readline().split()[1])*1e12)
     else:
         tpdf.append(float(f.readline().split()[1])*1e12)
-sum = 0.0
-for i in range(16):
-    sum += (tpdr[i]-tpdf[i])
-print("The average of the differences is ", sum/16)
+
+print("The average of the differences is ", np.average(np.array(tpdr)-np.array(tpdf)))
+print("The stddev of the differences is ", np.std(np.array(tpdr)-np.array(tpdf)))
 from sklearn.linear_model import LinearRegression
 reg = LinearRegression()
 reg.fit(np.array(X), np.array(tpdf))
