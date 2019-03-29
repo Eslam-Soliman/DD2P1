@@ -6,6 +6,9 @@ Vicon|ic
 Vlayout|lay
 Vschematic|sch
 
+# Technologies:
+Tmocmos|ScaleFORmocmos()D100.0|mocmosAnalog()BT|mocmosNumberOfMetalLayers()I3
+
 # Cell AOI22x1;1{ic}
 CAOI22x1;1{ic}||artwork|1553430365264|1553431081950|E
 Ngeneric:Facet-Center|art@0||0|0||||AV
@@ -145,15 +148,15 @@ Ez||D5G2;|contact@11||U
 X
 
 # Cell AOI22x1;1{sch}
-CAOI22x1;1{sch}||schematic|1553430224663|1553430425835|
+CAOI22x1;1{sch}||schematic|1553430224663|1553875099072|
 IAOI22x1;1{ic}|AOI22x1@1||21|21|||D5G4;
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOff-Page|f|D5G1;|14.5|-0.5||||
 NGround|gnd@0||-1|-11.5||||
-NTransistor|nmos@0||-5|-2.5|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D8.0
-NTransistor|nmos@1||-5|-7.5|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D8.0
-NTransistor|nmos@2||3|-2.5|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D8.0
-NTransistor|nmos@3||3|-7.5|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D8.0
+NTransistor|nmos@0||-5|-2.5|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D6.0
+NTransistor|nmos@1||-5|-7.5|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D6.0
+NTransistor|nmos@2||3|-2.5|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D6.0
+NTransistor|nmos@3||3|-7.5|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D6.0
 NWire_Pin|pin@0||-1|-9.5||||
 NWire_Pin|pin@1||-1|8.5||||
 NWire_Pin|pin@2||8.5|-14.5||||
@@ -166,10 +169,10 @@ NWire_Pin|pin@8||9|-7.5||||
 NWire_Pin|pin@9||9|15.5||||
 NWire_Pin|pin@10||-7|15.5||||
 NWire_Pin|pin@11||-7|6.5||||
-NTransistor|pmos@0||-5|1.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D19.0
-NTransistor|pmos@1||-5|6.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D19.0
-NTransistor|pmos@2||3|1.5|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D19.0
-NTransistor|pmos@3||3|6.5|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D19.0
+NTransistor|pmos@0||-5|1.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D21.0
+NTransistor|pmos@1||-5|6.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D21.0
+NTransistor|pmos@2||3|1.5|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D21.0
+NTransistor|pmos@3||3|6.5|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D21.0
 NPower|pwr@0||-1|11||||
 NOff-Page|w|D5G1;|13|-7.5|||X|
 NOff-Page|x|D5G1;|-14.5|-14.5||||
@@ -213,6 +216,18 @@ Ew||D5G2;|w|a|U
 Ex||D5G2;|x|a|U
 Ey||D5G2;|y|a|U
 Ez||D5G2;|z|a|U
+X
+
+# Cell AOI22x1_sim;1{sch}
+CAOI22x1_sim;1{sch}||schematic|1553871617597|1553872059930|
+IAOI22x1;1{ic}|AOI22x1@0||32.5|10|||D5G4;
+Ngeneric:Facet-Center|art@0||0|0||||AV
+Ngeneric:Invisible-Pin|pin@0||-26|3.5|||||SIM_spice_card(D5G2;)S[.step param factor LIST 1 2 4 8,*** SUBCIRCUIT first__INV1x1 FROM CELL first:INV1x1{sch},.SUBCKT first__INV1x1 in out,** GLOBAL gnd,** GLOBAL vdd,Mnmos@0 out in gnd gnd N L=0.2U W= {factor*0.3U},Mpmos@0 vdd in out vdd P L=0.2U W= {factor*0.7U},.ENDS first__INV1x1,Xinverter@2 F out2 first__INV1x1,.step param t LIST 0p 100p 400p 800p,Vdd vdd 0 DC 3.3,Vin1 x 0 pulse 0 3.3 5n {t/0.6 + 0.00000001f} {t/0.6 + 0.00000001f} 5n {10 + t/0.3},Vin2 y 0 DC 3.3,Vin3 z 0 DC 0,Vin4 w 0 DC 0,.tran 0 15n,.measure tpdf,+ TRIG V(x) VAL= 1.65 RISE = 1,+ TARG V(F) VAL=1.65 FALL = 1,.measure tpdr,+ TRIG V(x) VAL = 1.65 FALL = 1,+ TARG V(F) VAL = 1.65 RISE = 1,.measure diff param = tpdr - tpdf,".include C:\\Electric\\scmos18.txt"]
+EF||D5G2;|AOI22x1@0|f|U
+Ew||D5G2;|AOI22x1@0|w|U
+Ex||D5G2;|AOI22x1@0|x|U
+Ey||D5G2;|AOI22x1@0|y|U
+Ez||D5G2;|AOI22x1@0|z|U
 X
 
 # Cell AOI22x2;1{ic}
@@ -350,15 +365,15 @@ Ez||D5G2;|contact@10||U
 X
 
 # Cell AOI22x2;1{sch}
-CAOI22x2;1{sch}||schematic|1553430940506|1553431030487|
+CAOI22x2;1{sch}||schematic|1553430940506|1553876139674|
 IAOI22x2;1{ic}|AOI22x2@0||21|22|||D5G4;
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOff-Page|f|D5G1;|14.5|0.5||||
 NGround|gnd@0||-1|-10.5||||
-NTransistor|nmos@0||-5|-1.5|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D16.0
-NTransistor|nmos@1||-5|-6.5|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D16.0
-NTransistor|nmos@2||3|-1.5|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D16.0
-NTransistor|nmos@3||3|-6.5|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D16.0
+NTransistor|nmos@0||-5|-1.5|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D12.0
+NTransistor|nmos@1||-5|-6.5|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D12.0
+NTransistor|nmos@2||3|-1.5|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D12.0
+NTransistor|nmos@3||3|-6.5|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D12.0
 NWire_Pin|pin@0||-1|-8.5||||
 NWire_Pin|pin@1||-1|9.5||||
 NWire_Pin|pin@2||8.5|-13.5||||
@@ -371,10 +386,10 @@ NWire_Pin|pin@8||9|-6.5||||
 NWire_Pin|pin@9||9|16.5||||
 NWire_Pin|pin@10||-7|16.5||||
 NWire_Pin|pin@11||-7|7.5||||
-NTransistor|pmos@0||-5|2.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D38.0
-NTransistor|pmos@1||-5|7.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D38.0
-NTransistor|pmos@2||3|2.5|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D38.0
-NTransistor|pmos@3||3|7.5|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D38.0
+NTransistor|pmos@0||-5|2.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D39.0
+NTransistor|pmos@1||-5|7.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)D39.0
+NTransistor|pmos@2||3|2.5|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D39.0
+NTransistor|pmos@3||3|7.5|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D39.0
 NPower|pwr@0||-1|12||||
 NOff-Page|w|D5G1;|13|-6.5|||X|
 NOff-Page|x|D5G1;|-14.5|-13.5||||
@@ -418,4 +433,16 @@ Ew||D5G2;|w|a|U
 Ex||D5G2;|x|a|U
 Ey||D5G2;|y|a|U
 Ez||D5G2;|z|a|U
+X
+
+# Cell AOI22x2_sim;1{sch}
+CAOI22x2_sim;1{sch}||schematic|1553874132710|1553875359884|
+IAOI22x2;1{ic}|AOI22x2@0||60|32.5|||D5G4;
+Ngeneric:Facet-Center|art@0||0|0||||AV
+Ngeneric:Invisible-Pin|pin@0||15|19|||||SIM_spice_card(D5G2;)S[.step param factor LIST 1 2 4 8,*** SUBCIRCUIT first__INV1x1 FROM CELL first:INV1x1{sch},.SUBCKT first__INV1x1 in out,** GLOBAL gnd,** GLOBAL vdd,Mnmos@0 out in gnd gnd N L=0.2U W= {factor*0.3U},Mpmos@0 vdd in out vdd P L=0.2U W= {factor*0.7U},.ENDS first__INV1x1,Xinverter@2 F out2 first__INV1x1,.step param t LIST 0p 100p 400p 800p,Vdd vdd 0 DC 3.3,Vin1 x 0 pulse 0 3.3 5n {t/0.6 + 0.00000001f} {t/0.6 + 0.00000001f} 5n {10 + t/0.3},Vin2 y 0 DC 3.3,Vin3 z 0 DC 0,Vin4 w 0 DC 0,.tran 0 15n,.measure tpdf,+ TRIG V(x) VAL= 1.65 RISE = 1,+ TARG V(F) VAL=1.65 FALL = 1,.measure tpdr,+ TRIG V(x) VAL = 1.65 FALL = 1,+ TARG V(F) VAL = 1.65 RISE = 1,.measure diff param = tpdr - tpdf,".include C:\\Electric\\scmos18.txt"]
+EF||D5G2;|AOI22x2@0|f|U
+Ew||D5G2;|AOI22x2@0|w|U
+Ex||D5G2;|AOI22x2@0|x|U
+Ey||D5G2;|AOI22x2@0|y|U
+Ez||D5G2;|AOI22x2@0|z|U
 X
