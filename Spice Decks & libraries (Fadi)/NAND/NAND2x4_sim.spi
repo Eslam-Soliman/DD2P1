@@ -1,26 +1,26 @@
-*** SPICE deck for cell NAND2x2_sim{sch} from library NAND
-*** Created on Thu Mar 28, 2019 15:32:49
-*** Last revised on Fri Mar 29, 2019 16:47:42
-*** Written on Fri Mar 29, 2019 16:47:59 by Electric VLSI Design System, version 9.07
+*** SPICE deck for cell NAND2x4_sim{sch} from library NAND
+*** Created on Fri Mar 29, 2019 15:56:27
+*** Last revised on Fri Mar 29, 2019 16:35:03
+*** Written on Fri Mar 29, 2019 16:47:48 by Electric VLSI Design System, version 9.07
 *** Layout tech: mocmos, foundry MOSIS
 *** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
 
-*** SUBCIRCUIT NAND__NAND2x2 FROM CELL NAND2x2{sch}
-.SUBCKT NAND__NAND2x2 a b F
+*** SUBCIRCUIT NAND__NAND2x4 FROM CELL NAND2x4{sch}
+.SUBCKT NAND__NAND2x4 a b F
 ** GLOBAL gnd
 ** GLOBAL vdd
-Mnmos@0 F b net@0 gnd N L=0.2U W=1.2U
-Mnmos@1 net@0 a gnd gnd N L=0.2U W=1.2U
-Mpmos@0 vdd b F vdd P L=0.2U W=2.2U
-Mpmos@1 vdd a F vdd P L=0.2U W=2.2U
-.ENDS NAND__NAND2x2
+Mnmos@0 F b net@0 gnd N L=0.2U W=2.4U
+Mnmos@1 net@0 a gnd gnd N L=0.2U W=2.4U
+Mpmos@0 vdd b F vdd P L=0.2U W=2.9U
+Mpmos@1 vdd a F vdd P L=0.2U W=2.9U
+.ENDS NAND__NAND2x4
 
 .global gnd vdd
 
-*** TOP LEVEL CELL: NAND2x2_sim{sch}
-XNAND2x2@0 a b F NAND__NAND2x2
+*** TOP LEVEL CELL: NAND2x4_sim{sch}
+XNAND2x4@0 a b F NAND__NAND2x4
 
-* Spice Code nodes in cell cell 'NAND2x2_sim{sch}'
+* Spice Code nodes in cell cell 'NAND2x4_sim{sch}'
 .step param factor LIST 1 2 4 8
 *** SUBCIRCUIT first__INV1x1 FROM CELL first:INV1x1{sch}
 .SUBCKT first__INV1x1 in out
