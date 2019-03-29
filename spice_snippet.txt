@@ -4,7 +4,7 @@
 ** GLOBAL gnd
 ** GLOBAL vdd
 Mnmos@0 out in gnd gnd N L=0.2U W= {factor*0.3U}
-Mpmos@0 vdd in out vdd P L=0.2U W= {factor*0.7U}
+Mpmos@0 vdd in out vdd P L=0.2U W= {factor*0.9U}
 .ENDS first__INV1x1
 Xinverter@2 F out2 first__INV1x1
 .step param t LIST 0p 100p 400p 800p
