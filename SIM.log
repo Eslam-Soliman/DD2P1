@@ -1,0 +1,53 @@
+Questionable use of curly braces in "vin1 a 0 pulse 0 3.3 5n {t/0.6+0.00000001f} {t/0.6+0.00000001f} 5n {10+t/0.3}"
+    Error: undefined symbol in: "[t]/0.6+0.00000001f"
+Questionable use of curly braces in "vin1 a 0 pulse 0 3.3 5n (t/0.6+0.00000001f) {t/0.6+0.00000001f} 5n {10+t/0.3}"
+    Error: undefined symbol in: "[t]/0.6+0.00000001f"
+Questionable use of curly braces in "vin1 a 0 pulse 0 3.3 5n (t/0.6+0.00000001f) (t/0.6+0.00000001f) 5n {10+t/0.3}"
+    Error: undefined symbol in: "10+[t]/0.3"
+Circuit: *** SPICE deck for cell Sim{sch} from library tri-state_Inverter
+
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Error on line 21 : vin1 a 0 pulse 0 3.3 5n (t/0.6+0.00000001f) (t/0.6+0.00000001f) 5n (10+t/0.3)
+	 Unknown parameter "t/0.6+0.00000001f"
+WARNING: Node TRI-STAT@0_A is floating.
+
+WARNING: Less than two connections to node A.  This node is used by VIN1.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+
+
+Measurement "tpdf" FAIL'ed
+
+Measurement "tpdr" FAIL'ed
+
+Measurement "diff" FAIL'ed
+
+
+Date: Fri Mar 29 16:08:37 2019
+Total elapsed time: 0.168 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2146
+traniter = 2132
+tranpoints = 1066
+accept = 1064
+rejected = 2
+matrix size = 8
+fillins = 0
+solver = Normal
+Matrix Compiler1: 460 bytes object code size  0.2/0.2/[0.1]
+Matrix Compiler2: 636 bytes object code size  0.2/0.1/[0.1]
+
+
