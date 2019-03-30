@@ -1,7 +1,7 @@
 *** SPICE deck for cell AOI22x2_sim{sch} from library AOI
 *** Created on Fri Mar 29, 2019 17:42:12
-*** Last revised on Sat Mar 30, 2019 09:24:25
-*** Written on Sat Mar 30, 2019 15:20:37 by Electric VLSI Design System, version 9.07
+*** Last revised on Sat Mar 30, 2019 15:21:20
+*** Written on Sat Mar 30, 2019 15:21:21 by Electric VLSI Design System, version 9.07
 *** Layout tech: mocmos, foundry MOSIS
 *** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
 
@@ -25,28 +25,16 @@ Mpmos@3 vdd z net@6 vdd P L=0.2U W=3.9U
 XAOI22x2@0 F w x y z AOI__AOI22x2
 
 * Spice Code nodes in cell cell 'AOI22x2_sim{sch}'
-.step param factor LIST 1 2 4 8
-*** SUBCIRCUIT first__INV1x1 FROM CELL first:INV1x1{sch}
-.SUBCKT first__INV1x1 in out
-** GLOBAL gnd
-** GLOBAL vdd
-Mnmos@0 out in gnd gnd N L=0.2U W= {factor*0.3U}
-Mpmos@0 vdd in out vdd P L=0.2U W= {factor*0.7U}
-.ENDS first__INV1x1
-Xinverter@2 F out2 first__INV1x1
-.step param t LIST 0p 100p 400p 800p
+.step param p1 LIST 0 3.3
+.step param p2 LIST 0 3.3
+.step param p3 LIST 0 3.3
 Vdd vdd 0 DC 3.3
-Vin1 x 0 pulse 0 3.3 5n {t/0.6 + 0.00000001f} {t/0.6 + 0.00000001f} 5n {10 + t/0.3}
-Vin2 y 0 DC 3.3
-Vin3 z 0 DC 0
+Vin1 x 0 DC {p1}
+Vin2 y 0 DC {p2}
+Vin3 z 0 DC {p3}
 Vin4 w 0 DC 0
 .tran 0 15n
-.measure tpdf
-+ TRIG V(x) VAL= 1.65 RISE = 1
-+ TARG V(F) VAL=1.65 FALL = 1
-.measure tpdr
-+ TRIG V(x) VAL = 1.65 FALL = 1
-+ TARG V(F) VAL = 1.65 RISE = 1
-.measure diff param = tpdr - tpdf
-.include C:\Electric\scmos18.txt
+.measure tran OutputVoltage param v(F)
+.include C:\Users\Dell\Desktop\scmos18.txt
+.END
 .END
