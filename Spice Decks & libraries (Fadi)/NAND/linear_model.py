@@ -1,5 +1,4 @@
 import numpy as np
-import statsmodels.api as sm
 fn = input ("Please enter the filename: ")
 f = open(fn, "r")
 output = open("output.txt", "w")
@@ -48,6 +47,8 @@ for i in range (16):
     else:
         tpdf.append(float(f.readline().split()[1])*1e12)
 
+print("The average of the differences is ", np.average(np.array(tpdr)-np.array(tpdf)))
+print("The stddev of the differences is ", np.std(np.array(tpdr)-np.array(tpdf)))
 from sklearn.linear_model import LinearRegression
 reg = LinearRegression()
 reg.fit(np.array(X), np.array(tpdf))

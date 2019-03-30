@@ -1,21 +1,21 @@
 *** SPICE deck for cell AOI22x2_sim{sch} from library AOI
 *** Created on Fri Mar 29, 2019 17:42:12
-*** Last revised on Fri Mar 29, 2019 18:02:39
-*** Written on Fri Mar 29, 2019 18:07:59 by Electric VLSI Design System, version 9.07
+*** Last revised on Sat Mar 30, 2019 09:24:25
+*** Written on Sat Mar 30, 2019 09:24:27 by Electric VLSI Design System, version 9.07
 *** Layout tech: mocmos, foundry MOSIS
 *** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
 
 *** SUBCIRCUIT AOI__AOI22x2 FROM CELL AOI22x2{sch}
-.SUBCKT AOI__AOI22x2 f w x y z
+.SUBCKT AOI__AOI22x2 F w x y z
 ** GLOBAL gnd
 ** GLOBAL vdd
-Mnmos@0 f y net@23 gnd N L=0.2U W=1.2U
+Mnmos@0 F y net@23 gnd N L=0.2U W=1.2U
 Mnmos@1 net@23 x gnd gnd N L=0.2U W=1.2U
-Mnmos@2 f z net@24 gnd N L=0.2U W=1.2U
+Mnmos@2 F z net@24 gnd N L=0.2U W=1.2U
 Mnmos@3 net@24 w gnd gnd N L=0.2U W=1.2U
-Mpmos@0 net@6 y f vdd P L=0.2U W=3.9U
+Mpmos@0 net@6 y F vdd P L=0.2U W=3.9U
 Mpmos@1 vdd w net@6 vdd P L=0.2U W=3.9U
-Mpmos@2 net@6 x f vdd P L=0.2U W=3.9U
+Mpmos@2 net@6 x F vdd P L=0.2U W=3.9U
 Mpmos@3 vdd z net@6 vdd P L=0.2U W=3.9U
 .ENDS AOI__AOI22x2
 
