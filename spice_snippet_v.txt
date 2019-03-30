@@ -1,0 +1,9 @@
+.step param p1 LIST 0 3.3
+.step param p2 LIST 0 3.3
+Vdd vdd 0 DC 3.3
+Vin1 a 0 DC {p1}
+Vin2 b 0 DC {p2}
+.tran 0 15n
+.measure tran OutputVoltage param v(F)
+.include C:\Users\Dell\Desktop\scmos18.txt
+.END

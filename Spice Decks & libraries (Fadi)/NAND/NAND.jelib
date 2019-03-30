@@ -328,7 +328,7 @@ Eb||D5G2;|pin@4||U
 X
 
 # Cell NAND2x4;1{lay}
-CNAND2x4;1{lay}||mocmos|1553433276013|1553927943078||DRC_last_good_drc_area_date()G1553927959094|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1553927959094
+CNAND2x4;1{lay}||mocmos|1553433276013|1553941307803||DRC_last_good_drc_area_date()G1553941075925|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1553941075925
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NMetal-1-N-Active-Con|contact@1||-17|-40||19||
 NMetal-1-P-Active-Con|contact@2||-7.5|17||37||
