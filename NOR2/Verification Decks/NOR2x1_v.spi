@@ -1,0 +1,33 @@
+*** SPICE deck for cell Sim{sch} from library NOR2
+*** Created on Sat Mar 30, 2019 14:48:09
+*** Last revised on Sat Mar 30, 2019 16:19:25
+*** Written on Sat Mar 30, 2019 16:19:26 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT NOR2__NOR2x1 FROM CELL NOR2x1{sch}
+.SUBCKT NOR2__NOR2x1 a b F gnd vdd
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 F a gnd gnd N L=0.2U W=0.3U
+Mnmos@1 F b gnd gnd N L=0.2U W=0.3U
+Mpmos@0 net@21 b F vdd P L=0.2U W=1U
+Mpmos@1 vdd a net@21 vdd P L=0.2U W=1U
+.ENDS NOR2__NOR2x1
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: Sim{sch}
+XNOR2x1@1 a b F gnd vdd NOR2__NOR2x1
+
+* Spice Code nodes in cell cell 'Sim{sch}'
+.step param p1 LIST 0 3.3
+.step param p2 LIST 0 3.3
+Vdd vdd 0 DC 3.3
+Vin1 a 0 DC {p1}
+Vin2 b 0 DC {p2}
+.tran 0 15n
+.measure tran OutputVoltage param v(F)
+.include C:\Electric\scmos18.txt
+.END
+.END

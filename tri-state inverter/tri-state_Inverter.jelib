@@ -10,20 +10,22 @@ Vschematic|sch
 Tmocmos|ScaleFORmocmos()D100.0|mocmosAnalog()BT|mocmosNumberOfMetalLayers()I3
 
 # Cell Sim;1{sch}
-CSim;1{sch}||schematic|1553866428837|1553948474224|
+CSim;1{sch}||schematic|1553866428837|1553958631256|
 Ngeneric:Facet-Center|art@0||0|0||||AV
-NGround|gnd@6||-42|-2||||
-Ngeneric:Invisible-Pin|pin@3||-69|7|||||SIM_spice_card(D5G1;)S[.step param factor LIST 1 2 4 8,*** SUBCIRCUIT first__INV1x1 FROM CELL first:INV1x1{sch},.SUBCKT first__INV1x1 in out,** GLOBAL gnd,** GLOBAL vdd,Mnmos@0 out in gnd gnd N L=0.2U W= {factor*0.3U},Mpmos@0 vdd in out vdd P L=0.2U W= {factor*0.7U},.ENDS first__INV1x1,Xinverter@2 F out2 first__INV1x1,.step param t LIST 0p 100p 400p 800p,Vdd vdd 0 DC 3.3,Vin1 a 0 pulse 0 3.3 5n {t/0.6 + 0.00000001f} {t/0.6 + 0.00000001f} 5n {10 + t/0.3},.tran 0 15n,.measure tpdf,+ TRIG V(a) VAL= 1.65 RISE = 1,+ TARG V(F) VAL=1.65 FALL = 1,.measure tpdr,+ TRIG V(a) VAL = 1.65 FALL = 1,+ TARG V(F) VAL = 1.65 RISE = 1,.measure diff param = tpdr - tpdf,".include C:\\Electric\\scmos18.txt"]
-NWire_Pin|pin@75||-49|7||||
-NWire_Pin|pin@76||-32|7||||
-NPower|pwr@2||-42|15||||
-Itri-state_inv1x8;1{ic}|tri-stat@10||-40|7|||D5G4;
-Awire|net@144|||900|pwr@2||-42|15|tri-stat@10|c|-42|11
-Awire|net@145|||900|tri-stat@10|~c|-42|3|gnd@6||-42|0
-Awire|net@146|||0|tri-stat@10|a|-46|7|pin@75||-49|7
-Awire|net@147|||1800|tri-stat@10|F|-36|7|pin@76||-32|7
-EF||D5G2;|pin@76||U
-Ea||D5G2;|pin@75||U
+Ngeneric:Invisible-Pin|pin@3||-70|11|||||SIM_spice_card(D5G1;)S[.step param p1 LIST 0 3.3,.step param p2 LIST 0 3.3,Vdd vdd 0 DC 3.3,Vin1 c 0 DC {p2},Vin2 i 0 DC {3.3 - p2},Vin3 a 0 DC {p1},.tran 0 15n,.measure tran OutputVoltage param v(F),".include C:\\Electric\\scmos18.txt",.END]
+NWire_Pin|pin@105||-52|7||||
+NWire_Pin|pin@106||-45|14||||
+NWire_Pin|pin@107||-36|7||||
+NWire_Pin|pin@108||-45|0||||
+Itri-state_inv1x8;1{ic}|tri-stat@18||-43|7|||D5G4;
+Awire|net@180|||0|tri-stat@18|a|-49|7|pin@105||-52|7
+Awire|net@181|||2700|tri-stat@18|c|-45|11|pin@106||-45|14
+Awire|net@182|||1800|tri-stat@18|F|-39|7|pin@107||-36|7
+Awire|net@183|||900|tri-stat@18|~c|-45|3|pin@108||-45|0
+EF||D5G2;|pin@107||U
+Ea||D5G2;|pin@105||U
+Ec||D5G2;|pin@106||U
+Ei||D5G2;|pin@108||U
 X
 
 # Cell tri-state_inv1x1;1{ic}
